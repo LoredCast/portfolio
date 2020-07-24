@@ -1,38 +1,171 @@
-.App {
-  text-align: center;
+html {
+  scroll-behavior: smooth;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.body {
+    width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.landing {
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(20, 20, 27);
+    background-image: url(./Images/Home.png);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 100%;
+
+    
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+h1 {
+    margin: 0;
 }
 
-.App-link {
-  color: #61dafb;
+.topper {
+    background-color: white;
+    height: 5px;
+    width: 0%;
+    transition: width 200ms;
+    transition-timing-function: cubic-bezier(.01,.94,.41,1.01);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.projects {
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    background-image: url(./Images/ProjectsBG.png);
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.landing h1::-moz-selection { /* Code for Firefox */
+  color: rgb(255, 255, 255);
+  background: rgb(0, 0, 0);
+}
+
+.main {
+    
+    margin-left: 3em;
+    position: fixed;
+    z-index: 0; 
+    
+    
+}
+
+.landing h1 {
+    font-size: 3em;
+    margin: 1em;
+    justify-content: center;
+    margin: auto;
+    display: flex;
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+
+
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    margin-top: 1em;
+    float: left;
+    margin-right: 1em;
+}
+
+
+li a {
+    color: rgb(194, 194, 194);
+    text-decoration: none;
+}
+
+li a:hover .topper{
+    
+    width: 100%;
+}
+
+li a:hover {
+    color: white;
+}
+
+
+.about {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    background-color: rgb(255, 248, 240);
+}
+
+
+.slope1 {
+    max-width: 100%;
+    position: relative;
+    background-image: url(./Images/ProjectsBG.png);
+    background-size: cover;
+    background-attachment: fixed;
+    border-bottom: 7vw solid rgb(255, 248, 240);
+    border-left: 96vw solid transparent;
+}
+.slope2 {
+    max-width: 100%;
+    
+    position: relative;
+    background-color: rgb(255, 248, 240);
+    border-bottom: 7vw solid #131313;
+    border-left: 96vw solid transparent;
+}
+
+.contact {
+    color: white;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    background-color: #131313;
+}
+
+#title {
+    display: flex;
+    
+    justify-content: center;
+}
+.projects h1 {
+    
+    font-size: 3em;
+    margin-top: 3em;
+    padding-left: auto;
+    color: white;
+}
+
+.projects h2 {
+    color: white;
+}
+.projects p {
+    color: rgb(238, 238, 238);
+}
+
+#panels {
+    display: flex;
+    justify-content: center;
+}
+
+.Project {
+    box-shadow: 0px 0px 60px rgb(107, 107, 107) ;
+    border-radius: 2em;
+    padding: 3em;
+    background-color: #e6e6e6;
 }
