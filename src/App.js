@@ -1,29 +1,42 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import ContactRender from './contactRender'
+
 
 class App extends React.Component {
-    render() {
-        return (<div className="body">
-                
-                <Landing />
-                <Projects/>
-                <div className="slope1"></div>
-                <About/>
-                <div className="slope2"></div>
-                <Contact/>
-                
-                </div>
-        );
+    constructor(props) {
+        super(props)
+        this.state = {
+            loading : true
+        }
     }
+
+    
+
+    render() {
+        
+
+            //return (<div className="loaderbody"><Loader/></div>)
+        
+           return (
+          <div className="body">
+            <Landing />
+            <Projects />
+            <div className="slope1"></div>
+            <About />
+            <div className="slope2"></div>
+            <Contact />
+            
+          </div>
+            ); 
+        }
+
+        
+    
 }
 
 
 class Nav extends React.Component {
-    activateTopper(e) {
-        e.target.style.width = "100%";
-    }
-
 
     render() {
         
@@ -31,7 +44,7 @@ class Nav extends React.Component {
             <ul>
 
                 <li> 
-                    <a href="#projects" onMouseHover={this.activateTopper}>
+                    <a href="#projects">
                     <div className="topper"></div>
                     Projects
                     </a>
@@ -53,17 +66,41 @@ class Nav extends React.Component {
 
 
 class Landing extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            opacity : 1,
+            
+        };
+    }
+    componentDidMount() {
+        window.onscroll = (e) => {
+            console.log(window.scrollY)
+            this.setState({
+              opacity: (100 - 0.5 * window.scrollY) / 100
+            });
+        }
+    }
+
+    scrollHandler = e => {
+        let element = e.target
+        let scroll = window.pageYOffset
+        element.style.background = 'red'
+        console.log(scroll)
+    }
+
     render() {
         return(
             
             <div className="landing">
                 
-                <div className="main">
-                    
+                <div className="main" style={this.state}>
                     <h1>Manuel Unterriker</h1>
                     <div id="devider"></div>
                     <Nav/>
                 </div>
+
+                <ContactRender/>
                 
             </div>
         );
@@ -71,16 +108,46 @@ class Landing extends React.Component {
 }
 
 class Projects extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            loading : true,
+            data : null,
+        }; 
+
+    }
+
+
+    componentDidMount(){
+        fetch("/api/getProjects")
+            .then(response => response.json())
+            .then(data => {
+                this.setState({data});
+                this.setState({ loading: false });
+                });
+        
+    }
     render() {
+        if (this.state.loading) {
+            return(
+            <div className="projects" id="projects">
+                <div id="title"><h1>PROJECTS</h1></div>
+                <div id="panels">
+                    <Loader></Loader>
+                </div>
+            </div>
+            )
+        }
+        else {
         return(
             <div className="projects" id="projects">
                 <div id="title"><h1>PROJECTS</h1></div>
                 <div id="panels">
-                    <Project/>
+                    <Project items={this.state.data}/>
                 </div>
             </div>
-            
-        );
+        );}
     }
 }
 
@@ -88,7 +155,30 @@ class About extends React.Component {
     render() {
         return (
             <div className="about" id="about">
-                <h1></h1>
+                <h1>About</h1>
+                <p>Hi,
+                    I'm a highschool student in germany with <br/>
+                    a passion for Web-Apps, Machine Learning,<br/>
+                    and everything about and around programming.
+                </p>
+            </div>
+
+        );
+    }
+}
+
+
+
+class Contact extends React.Component {
+    render() {
+        return (
+            <div className="contact" id="contact">
+                <div><h1>Contact</h1></div>
+                <div id="contact-panels">
+                    <ContactPanel img="Github.png" content="Github" link="https://github.com/LoredCast/"/>
+                    <ContactPanel img="Dribble.png" content="Dribble" link="https://dribbble.com/LoredCast" />
+                    <ContactPanel img="Mail.png" content="manuel@unterriker.biz" link="mailto:manuel@unterriker.biz"/>
+                </div>
 
                 
             </div>
@@ -98,27 +188,40 @@ class About extends React.Component {
 }
 
 
-class Contact extends React.Component {
-    render() {
-        return (
-            <div className="contact" id="contact">
-                <h1>Contact</h1>
-            </div>
 
-        );
-    }
+function ContactPanel(props) {
+    return (
+        <a href={props.link}>
+            <div className="contact-panel">
+            <img src={props.img} alt="Link"/>
+            <p>{props.content}</p>
+        </div></a>)
 }
 
 
 class Project extends React.Component {
     render() {
         return (
-            <div className="Project">
-            <img></img>
-            <h2>Pong AI</h2>
-            <p>A neuro-evolving neural-network learns to play pong</p>
-            </div>
+            <React.Fragment key="0">
+                {this.props.items.projects.map(item =>
+                    <React.Fragment key={item.id}>
+                        <div className="Project">
+                            <a href={item.link}><img src={item.Image} alt="Project"></img></a>
+                            <h2>{item.title}</h2>
+                            <p>{item.content}</p>
+                        </div>
+                    </React.Fragment>
+                )}
+            </React.Fragment>
         );
     }
 }
+
+class Loader extends React.Component {
+    render() {
+        return (<div className="lds-dual-ring"></div>)
+    }
+}
+
+
 export default App;
