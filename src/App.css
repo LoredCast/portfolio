@@ -37,6 +37,10 @@ html {
 
 }
 
+p {
+    line-height: 1.6em;
+}
+
 a {
     color: white;
     text-decoration: underline;
@@ -150,8 +154,9 @@ li a:hover {
     
     position: relative;
     background-color: rgb(255, 248, 240);
-    border-bottom: 7vw solid #131313;
-    border-left: 96vw solid transparent;
+    border-bottom: 18vh solid #13131300;
+
+    transform: skewY(10deg);
 }
 
 .contact {
@@ -159,7 +164,7 @@ li a:hover {
     height: 100vh;
     width: 100%;
     position: relative;
-    background-color: #131313;
+    
 }
 
 #title {
@@ -215,6 +220,7 @@ li a:hover {
 }
 
 .Project img {
+    max-width: 800px;
     width: 100%;
     border-radius: 5px;
 }
@@ -242,7 +248,7 @@ li a:hover {
     }
 
     .about p {
-        margin-right: 1em;
+        margin-right: 2em;
     }
 }
 

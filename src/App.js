@@ -155,11 +155,11 @@ class About extends React.Component {
     render() {
         return (
             <div className="about" id="about">
-                <h1>About</h1>
-                <p>Hi,
-                    I'm a highschool student in germany with <br/>
+                <h1>About me</h1>
+                <p><h2>Hi,</h2>
+                    I'm a 16 year old highschool student in germany with <br/>
                     a passion for Web-Apps, Machine Learning,<br/>
-                    and everything about and around programming.
+                    and everything about and around programming and design.
                 </p>
             </div>
 

@@ -26,7 +26,7 @@ class ContactRender extends React.Component {
 
 
             for (let i = 0; i < POINTS; i++) {
-                let sphereGeometry = new THREE.SphereGeometry(radius, 20, 20);
+                let sphereGeometry = new THREE.CircleGeometry(radius, 5);
                 let material = new THREE.MeshBasicMaterial({ color: 0xFFFFFF })
                 let sphere = new THREE.Mesh(sphereGeometry, material)
                 spheres.push(sphere)
