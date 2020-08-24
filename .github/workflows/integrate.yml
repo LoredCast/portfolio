@@ -1,5 +1,12 @@
 on: 
-  workflow_dispatch:
+  [push]   
+
+
+jobs:
+  test:
+    runs-on: ubuntu-latest 
+    
+    steps:
     - name: ls -a via ssh
       uses: garygrossgarten/github-action-ssh@release
       with:
