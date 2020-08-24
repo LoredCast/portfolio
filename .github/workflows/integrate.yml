@@ -1,0 +1,9 @@
+on: 
+  workflow_dispatch:
+    - name: ls -a via ssh
+      uses: garygrossgarten/github-action-ssh@release
+      with:
+        command: ls -a
+        host: ${{ secrets.IP }}
+        username: ${{ secrets.USER }}
+        privateKey: ${{ secrets.SSH_KEY}}
