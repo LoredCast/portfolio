@@ -13,7 +13,7 @@ jobs:
       uses: garygrossgarten/github-action-ssh@release
       with:
         command: |
-          systemctl stop portfolio
+          sudo systemctl stop portfolio
           cd portfolio
           git pull
         host: ${{ secrets.IP }}
@@ -23,6 +23,7 @@ jobs:
       uses: garygrossgarten/github-action-ssh@release
       with:
         command: |
+          cd portfolio
           yarn build
         host: ${{ secrets.IP }}
         username: ${{ secrets.USER }}
@@ -31,7 +32,7 @@ jobs:
       uses: garygrossgarten/github-action-ssh@release
       with:
         command: |
-          systemctl start portfolio
+          sudo systemctl start portfolio
         host: ${{ secrets.IP }}
         username: ${{ secrets.USER }}
         privateKey: ${{ secrets.SSH_KEY}}
