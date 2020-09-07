@@ -23,16 +23,9 @@ jobs:
       uses: garygrossgarten/github-action-ssh@release
       with:
         script: |
-          cd portfolio
           yarn build
-        host: ${{ secrets.IP }}
-        username: ${{ secrets.USER }}
-        privateKey: ${{ secrets.SSH_KEY}}
     - name: restart backend
       uses: garygrossgarten/github-action-ssh@release
       with:
         script: |
           systemctl start portfolio
-        host: ${{ secrets.IP }}
-        username: ${{ secrets.USER }}
-        privateKey: ${{ secrets.SSH_KEY}}     
