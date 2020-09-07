@@ -1,5 +1,7 @@
 on: 
-  [push]   
+  push:
+    branches: 
+      - master 
 
 
 jobs:
@@ -7,10 +9,30 @@ jobs:
     runs-on: ubuntu-latest 
     
     steps:
-    - name: ls -a via ssh
+    - name: Pull changes
       uses: garygrossgarten/github-action-ssh@release
       with:
-        command: ls -a
+        command: |
+          systemctl stop portfolio
+          cd portfolio
+          git pull
         host: ${{ secrets.IP }}
         username: ${{ secrets.USER }}
         privateKey: ${{ secrets.SSH_KEY}}
+    - name: build react
+      uses: garygrossgarten/github-action-ssh@release
+      with:
+        script: |
+          cd portfolio
+          yarn build
+        host: ${{ secrets.IP }}
+        username: ${{ secrets.USER }}
+        privateKey: ${{ secrets.SSH_KEY}}
+    - name: restart backend
+      uses: garygrossgarten/github-action-ssh@release
+      with:
+        script: |
+          systemctl start portfolio
+        host: ${{ secrets.IP }}
+        username: ${{ secrets.USER }}
+        privateKey: ${{ secrets.SSH_KEY}}     
