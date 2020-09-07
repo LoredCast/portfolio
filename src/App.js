@@ -75,7 +75,6 @@ class Landing extends React.Component {
     }
     componentDidMount() {
         window.onscroll = (e) => {
-            console.log(window.scrollY)
             this.setState({
               opacity: (100 - 0.5 * window.scrollY) / 100
             });
