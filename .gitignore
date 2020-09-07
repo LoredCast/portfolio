@@ -18,7 +18,7 @@ nve
 .env.test.local
 .env.production.local
 __pycache___
-/portfolio/__pycache___
+/portfolio-backend/__pycache___
 
 npm-debug.log*
 yarn-debug.log*
