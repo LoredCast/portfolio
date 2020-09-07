@@ -175,9 +175,9 @@ class Contact extends React.Component {
             <div className="contact" id="contact">
                 <div><h1>Contact</h1></div>
                 <div id="contact-panels">
-                    <ContactPanel img="Github.png" content="Github" link="https://github.com/LoredCast/"/>
-                    <ContactPanel img="Dribble.png" content="Dribble" link="https://dribbble.com/LoredCast" />
-                    <ContactPanel img="Mail.png" content="manuel@unterriker.biz" link="mailto:manuel@unterriker.biz"/>
+                    <ContactPanel img="Github-min.png" content="Github" link="https://github.com/LoredCast/"/>
+                    <ContactPanel img="Dribble-min.png" content="Dribble" link="https://dribbble.com/LoredCast" />
+                    <ContactPanel img="Mail-min.png" content="manuel@unterriker.biz" link="mailto:manuel@unterriker.biz"/>
                 </div>
 
                 

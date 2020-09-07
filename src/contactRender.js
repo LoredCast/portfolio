@@ -1,7 +1,6 @@
 import React from 'react';
 import * as THREE from 'three'
 import './contact.css'
-import VertexLitParticle from './VertexLitParticle'
 
 
 
@@ -13,7 +12,6 @@ class ContactRender extends React.Component {
         
         const radius = 0.01
         const POINTS = 500
-        let spheres = new Array(POINTS)
         
 
         let init = () => {
@@ -29,26 +27,15 @@ class ContactRender extends React.Component {
                 let sphereGeometry = new THREE.CircleGeometry(radius, 5);
                 let material = new THREE.MeshBasicMaterial({ color: 0xFFFFFF })
                 let sphere = new THREE.Mesh(sphereGeometry, material)
-                spheres.push(sphere)
-
-                
-
+                sphere.position.x = (Math.random() - 0.5) * 20
+                sphere.position.y = (Math.random() - 0.5) * 20
+                sphere.position.z = ((Math.random() - 0.5) * 10) - 5
                 scene.add(sphere)
             }
             
             camera.position.z = 5
             camera.position.y += 1
             camera.position.x += 1
-
-            spheres.forEach((sphere, index, array) => {
-
-                sphere.position.x = (Math.random() - 0.5) * 20
-                sphere.position.y = (Math.random() - 0.5) * 20
-                sphere.position.z = ((Math.random() - 0.5) * 10) - 5
-
-                
-
-            })
 
             
         }
@@ -65,8 +52,6 @@ class ContactRender extends React.Component {
 
 
         let onMouseMove = (event) => {
-            
-
             
             camera.position.x -= (event.screenX - prevX) / 500
             camera.position.y += (event.screenY - prevY) / 500
@@ -87,7 +72,6 @@ class ContactRender extends React.Component {
         }
 
         let onScroll = () => {
-            console.log(window.scrollY)
             camera.position.y -= (window.scrollY - prevScroll) / 500
             prevScroll = window.scrollY
         }
@@ -98,13 +82,7 @@ class ContactRender extends React.Component {
         let animate = () => {
             requestAnimationFrame(animate)
             renderer.render(scene, camera) 
-            spheres.forEach((sphere, index, array) => {
-                //sphere.position.z += Math.random() * 0.01
-            })
 
-            
-            
-            
         }
         window.addEventListener('load', onLoad, false)
         window.addEventListener('mouseenter', onMouseIn, false)
