@@ -22,10 +22,10 @@ jobs:
     - name: build react
       uses: garygrossgarten/github-action-ssh@release
       with:
-        script: |
+        command: |
           yarn build
     - name: restart backend
       uses: garygrossgarten/github-action-ssh@release
       with:
-        script: |
+        command: |
           systemctl start portfolio
