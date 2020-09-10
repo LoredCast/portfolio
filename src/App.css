@@ -212,7 +212,7 @@ li a:hover {
     border: solid;
     border-radius: 10px;
     border-width: 1px;
-    border-color: #ffffff0c;
+    border-color: #ffffff33;
     padding: 3em;
     margin: 3em;
     transition: box-shadow 200ms, transform 200ms, background-color 200ms;
