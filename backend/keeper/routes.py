@@ -81,7 +81,7 @@ def create_user():
 
         return(f"Success! User '{name}' created! {User.query.all()}", 200)
     except Exception as e:
-        print(e)
+        print('{"username":"username", "mail": "mail", "password": "password"}',e)
         abort(400)
 
     
