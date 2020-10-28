@@ -32,8 +32,8 @@ jobs:
       uses: garygrossgarten/github-action-ssh@release
       with:
         command: |
-          cd portfolio/portfolio-backend
-          source nve/Scripts/activate
+          cd portfolio/backend
+          source venv/bin/activate
           pip install -r requirements.txt
         host: ${{ secrets.IP }}
         username: ${{ secrets.USER }}
