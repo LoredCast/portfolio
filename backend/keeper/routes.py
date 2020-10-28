@@ -51,7 +51,7 @@ def getImage(path):
         abort(404)
         
 
-@app.route("/api/createUser", methods=["GET", "POST"])
+@app.route("/api/createUser", methods=["POST"])
 def create_user():
     post = request.get_json()
     try:
@@ -85,7 +85,7 @@ def create_user():
         abort(400)
 
     
-@app.route("/api/login", methods=["GET", "POST"])
+@app.route("/api/login", methods=["POST"])
 def login():
     post = request.get_json()
     try:
