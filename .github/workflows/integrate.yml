@@ -28,6 +28,16 @@ jobs:
         host: ${{ secrets.IP }}
         username: ${{ secrets.USER }}
         privateKey: ${{ secrets.SSH_KEY}}
+    - name: pip install dependencies
+      uses: garygrossgarten/github-action-ssh@release
+      with:
+        command: |
+          cd portfolio/backend
+          source venv/Scripts/activate
+          pip install -r requirements.txt
+        host: ${{ secrets.IP }}
+        username: ${{ secrets.USER }}
+        privateKey: ${{ secrets.SSH_KEY}}
     - name: restart backend
       uses: garygrossgarten/github-action-ssh@release
       with:
