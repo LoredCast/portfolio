@@ -5,6 +5,11 @@
 /.pnp
 .pnp.js
 nve
+venv
+/__pycache___
+__pycache___
+.vim
+
 # testing
 /coverage
 
@@ -17,8 +22,10 @@ nve
 .env.development.local
 .env.test.local
 .env.production.local
-__pycache___
-/portfolio-backend/__pycache___
+__pycache__
+*.pyc
+
+
 
 npm-debug.log*
 yarn-debug.log*
