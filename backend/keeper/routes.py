@@ -11,9 +11,6 @@ from keeper.models import User, Transaction
 from keeper import app, db, bcrypt
 
 
-
-
-
 projects = [
     {
         "id": 0,
@@ -46,7 +43,7 @@ def getProjects():
 
 
 
-@app.route("/api/Images/<path:path>")
+@app.route("/api/Images/<path:path>", methods=["GET"])
 def getImage(path):
     try:
         return send_from_directory(app.config["CLIENT_IMAGES"], filename=path, as_attachment=True)
@@ -54,7 +51,7 @@ def getImage(path):
         abort(404)
         
 
-@app.route("/api/createUser", methods=["POST"])
+@app.route("/api/createUser", methods=["GET", "POST"])
 def create_user():
     post = request.get_json()
     try:
@@ -80,9 +77,7 @@ def create_user():
             return("Creation failed! Email already taken!", 409)
         
 
-        """for user in User.query.all():
-            db.session.delete(user) 
-        db.session.commit()"""
+
 
         return(f"Success! User '{name}' created! {User.query.all()}", 200)
     except Exception as e:
@@ -90,10 +85,7 @@ def create_user():
         abort(400)
 
     
-
-
-
-@app.route("/api/login", methods=["POST"])
+@app.route("/api/login", methods=["GET", "POST"])
 def login():
     post = request.get_json()
     try:
@@ -108,7 +100,7 @@ def login():
         return(f"{e}", 400)
 
 
-@app.route("/api/logout", methods=["POST"])
+@app.route("/api/logout", methods=["GET", "POST"])
 def logout():
     if current_user.is_authenticated:
         logout_user()
