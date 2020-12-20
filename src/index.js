@@ -4,9 +4,27 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+import { IntlProvider } from 'react-intl';
+
+
+
+import en from './Content/Translations/en.json'
+import de from './Content/Translations/de.json'
+
+
+
+const messages = {
+    "en" : en,
+    "de" : de
+}
+console.log(messages["de"])
+
 ReactDOM.render(
   <React.StrictMode>
+
+      <IntlProvider locale="de" messages={messages["de"]}>
     <App />
+        </IntlProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -10,7 +10,7 @@ class ContactRender extends React.Component {
     three = () => {
         let scene, camera, renderer
         
-        const radius = 0.01
+        const radius = 0.010
         const POINTS = 500
         
 

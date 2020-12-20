@@ -89,9 +89,9 @@ def create_user():
 def login():
     post = request.get_json()
     try:
-        mail = post["mail"]
+        email = post["email"]
         password = post["password"]
-        user = User.query.filter_by(email=mail).first()
+        user = User.query.filter_by(email=email).first()
         remember = post["remember"]
         if bcrypt.check_password_hash(user.password, password):
             login_user(user, remember=remember)

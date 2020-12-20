@@ -1,6 +1,43 @@
 html {
   scroll-behavior: smooth;
+  
 }
+
+.language {
+    position: fixed;
+    z-index: 2;
+    margin-top: 1em;
+    margin-right: 1em;
+    right: 0;
+    
+}
+.language button {
+    background-color: transparent;
+    border: none;
+    border-bottom: solid rgba(190, 190, 190, 0.336) 1px;
+    color: rgb(196, 196, 196);
+    padding: 0.5em 0.5em;
+    margin-left: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+    transition: 60ms;
+    
+
+}
+
+.language button:hover {
+    
+    box-shadow: black 1 1;
+    cursor: pointer;
+    background-color: #c9c9c917;
+}
+
+.language button:active {
+    background-color: #c9c9c925;
+    transform: translateY(1px); /* Green */
+}
+
 
 
 .loaderbody {
@@ -16,6 +53,7 @@ html {
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
     width: 100%;
+    
 }
 
 .landing {
@@ -232,6 +270,9 @@ li a:hover {
 }
 
 @media (max-width:1000px) {
+    .body {
+        font-size: 14px;
+    }
     .main {
         margin-left: 1em;
     }
@@ -247,9 +288,9 @@ li a:hover {
         flex-direction: column;
     }
 
-    .about p {
-        margin-right: 2em;
-    }
+    
+
+    
 }
 
 
@@ -291,6 +332,10 @@ li a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.about p {
+    max-width: 400px;
 }
 
 .contact {
@@ -357,5 +402,18 @@ li a:hover {
     }
     .contact-panel p {
         text-underline-offset: 10px;
+    }
+    .about h1 {
+        
+        transform: rotate(0deg);
+    
+    }
+    .about {
+        display: flex;
+        flex-direction: column;
+    }
+    .about p {
+        margin: 3em;
+        text-align: justify;
     }
 }
