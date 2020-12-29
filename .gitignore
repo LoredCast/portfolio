@@ -10,6 +10,7 @@ venv
 __pycache___
 .vim
 
+
 # testing
 /coverage
 
@@ -24,7 +25,7 @@ __pycache___
 .env.production.local
 __pycache__
 *.pyc
-
+.vscode
 
 
 npm-debug.log*
