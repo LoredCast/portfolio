@@ -25,9 +25,6 @@ const messages = {
 
 
 class App extends React.Component {
-
-    
-
     render() {
         return(
             <Router>
@@ -36,7 +33,6 @@ class App extends React.Component {
                     <Route exact path='/' component={Portfolio}></Route>
                     <Route path='/login' component={Login}></Route>
                     <Route path='/' component={NotFound}></Route>
-                    
                     </Switch>
                 </div>
             </Router>
@@ -73,8 +69,6 @@ class Portfolio extends React.Component {
         this.setState({lan: e.target.value});
     }
 
-
-
     render() {
         
            return (
@@ -91,9 +85,6 @@ class Portfolio extends React.Component {
              </IntlProvider>
             ); 
         }
-
-        
-    
 }
 
 
@@ -101,7 +92,8 @@ class Nav extends React.Component {
 
     render() {
         
-        return(<div>
+        return(
+        <div>
             <ul>
                 <li>
                     <a href="#about"><div className="topper"></div>
@@ -120,7 +112,8 @@ class Nav extends React.Component {
                     </a>
                 </li>
             </ul>
-        </div>);
+        </div>
+        );
     }
 }
 
@@ -143,7 +136,6 @@ class Landing extends React.Component {
 
     render() {
         return(
-            
             <div className="landing">
                 <div className="main" style={this.state}>
                     <h1>Manuel Unterriker</h1>
@@ -159,12 +151,10 @@ class Landing extends React.Component {
 class Projects extends React.Component {
     constructor(props) {
         super(props);
-
         this.state = {
             loading : true,
             data : null,
         }; 
-
     }
 
 
@@ -175,8 +165,8 @@ class Projects extends React.Component {
                 this.setState({data});
                 this.setState({ loading: false });
                 });
-        
     }
+
     render() {
         if (this.state.loading) {
             return(
@@ -205,12 +195,10 @@ class About extends React.Component {
         return (
             <div className="about" id="about">
                 <h1><FormattedMessage id="app.about.heading"/></h1>
-                <p><h2>Hi,</h2>
-                    
+                <p><h2>Hi,</h2>  
                     <FormattedMessage id="app.about.content"/>
                 </p>
             </div>
-
         );
     }
 }
@@ -243,7 +231,8 @@ function ContactPanel(props) {
             <div className="contact-panel">
             <img src={props.img} alt="Link"/>
             <p>{props.content}</p>
-        </div></a>)
+        </div></a>
+    )
 }
 
 
