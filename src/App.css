@@ -285,6 +285,7 @@ li a:hover {
 
     .Project {
         margin: 2em 3em 2em 3em;
+        width: auto;
     }
     #panels{
         flex-direction: column;
