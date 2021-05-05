@@ -3,6 +3,7 @@ import './App.css';
 import ContactRender from './contactRender';
 import NotFound from './NotFound'
 import Login from './Login'
+import Spring from './Spring/Spring'
 import { FormattedMessage } from 'react-intl';
 
 import { 
@@ -30,9 +31,10 @@ class App extends React.Component {
             <Router>
                 <div className="App">
                     <Switch>
-                    <Route exact path='/' component={Portfolio}></Route>
-                    <Route path='/login' component={Login}></Route>
-                    <Route path='/' component={NotFound}></Route>
+                        <Route exact path='/' component={Portfolio}></Route>
+                        <Route path='/login' component={Login}></Route>
+                        <Route path='/spring' component={Spring}></Route>
+                        <Route path='/' component={NotFound}></Route>
                     </Switch>
                 </div>
             </Router>
