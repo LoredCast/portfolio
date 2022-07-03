@@ -24,7 +24,7 @@ jobs:
       with:
         command: |
           cd portfolio
-          npm install
+          yarn install
           yarn build
         host: ${{ secrets.IP }}
         username: ${{ secrets.USER }}
