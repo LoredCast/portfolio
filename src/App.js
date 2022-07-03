@@ -16,7 +16,7 @@ import {
 import { IntlProvider } from 'react-intl';
 import en from './Content/Translations/en.json'
 import de from './Content/Translations/de.json'
-
+import projects from './Content/Translations/projects.json'
 
 
 const messages = {
@@ -81,7 +81,7 @@ class Portfolio extends React.Component {
                     <div className="slope1"></div>
                     <About />
                     <div className="slope2"></div>
-                    <Projects />                   
+                    <Projects lan={this.state.lan}/>   
                     <Contact />
                 </div>
              </IntlProvider>
@@ -156,11 +156,14 @@ class Projects extends React.Component {
         this.state = {
             loading : true,
             data : null,
+            projects: projects[props.lan]
+
         }; 
     }
 
 
     componentDidMount(){
+        console.log(this.state.projects)
         fetch("/api/getProjects")
             .then(response => response.json())
             .then(data => {
@@ -173,9 +176,12 @@ class Projects extends React.Component {
         if (this.state.loading) {
             return(
             <div className="projects" id="projects">
-                <div id="title"><h1>PROJECTS</h1></div>
+                <div id="title"><h1><FormattedMessage id="app.projects.heading"/></h1></div>
                 <div id="panels">
-                    <Loader></Loader>
+                        <ProjectList items={projects[this.props.lan].slice(0,3)}></ProjectList>
+                </div>
+                <div id="panels">
+                        <ProjectList items={projects[this.props.lan].slice(3,6)}></ProjectList>
                 </div>
             </div>
             )
@@ -183,9 +189,12 @@ class Projects extends React.Component {
         else {
         return(
             <div className="projects" id="projects">
-                <div id="title"><h1><FormattedMessage id="app.projects.heading"/></h1></div>
+                
                 <div id="panels">
-                    <Project items={this.state.data}/>
+                    <ProjectList items={this.state.data}/>
+                </div>
+                <div id="panels">
+                    <ProjectList items={this.state.data}/>
                 </div>
             </div>
         );}
@@ -238,22 +247,62 @@ function ContactPanel(props) {
 }
 
 
-class Project extends React.Component {
+class ProjectList extends React.Component {
+
+    // TODO
+    // Create Buttons to switch between images in image list of json object
+
+
+    
     render() {
         return (
             <React.Fragment key="0">
-                {this.props.items.projects.map(item =>
+                {this.props.items.map(item =>
                     <React.Fragment key={item.id}>
-                        <div className="Project">
-                            <a href={item.link}><img src={item.Image} alt="Project"></img></a>
-                            <h2>{item.title}</h2>
-                            <p>{item.content}</p>
-                        </div>
+                        <Project link={item.link} content={item.content} title={item.title} images={item.images}></Project>
                     </React.Fragment>
                 )}
             </React.Fragment>
         );
     }
+}
+
+class Project extends React.Component {
+    
+    constructor(props) {
+        super(props);
+        this.state = {
+            imageIndex : 0,
+        }; 
+    }
+
+    componentDidUpdate() {
+    }
+
+    cycle(e) {
+        let indexIncr = (this.state.imageIndex + 1) % this.props.images.length
+        this.setState({imageIndex: indexIncr})
+    }
+
+    render() {
+        return(
+        <div className="Project">
+            <div className='relativeContainer'>
+                
+                {(this.props.images.length > 1) && 
+                <div class="pic" onClick={() => this.cycle()}>
+                <div class="arrow"></div></div>
+                // only render when there are more than 1 image
+                } 
+
+                <a href={this.props.link}>
+                    <img src={this.props.images[this.state.imageIndex]} alt="Project"></img>
+                </a>
+            </div>
+            <h2>{this.props.title}</h2>
+            <p>{this.props.content}</p>
+        </div>
+    )}
 }
 
 class Loader extends React.Component {
