@@ -1,9 +1,9 @@
 {
     "app.nav.contact" : "Contact",
     "app.nav.projects" : "Projects",
-    "app.nav.about" : "About me",
+    "app.nav.about" : "Who am I?",
     "app.projects.heading" : "PROJECTS",
-    "app.about.heading" : "About me",
-    "app.about.content" : "I'm a 16 year old highschool student in germany with a passion for Web-Apps, Machine Learning, and everything about and around programming and design.",
+    "app.about.heading" : "Who am I?",
+    "app.about.content" : "I'm an 18 year old student from germany with a passion for the Web, Machine Learning, and everything about and around programming and design :)",
     "app.contact.heading" : "Contact"
 }

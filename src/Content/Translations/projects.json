@@ -1,0 +1,120 @@
+{
+    "de": [
+        {
+            "id": 0,
+            "title": "Electron Soundboard",
+            "content": "Ein Electron Sounboard mit Tastenkürzel und Aufnahme Funktion. Geschrieben in Typescript, Interface 100% selfmade.",
+            "images": ["soundboard.png"],
+            "link": "https://github.com/LoredCast/soundboard"
+        },
+        {
+            "id": 1,
+            "title": "Pong KI",
+            "content": "Neuro-Evolutionäre Pong KI die nach wenigen Generationen lernt, Pong zu spielen. Basierend auf der Python NEAT Implementation. ",
+            "images": ["Pong-min.png"],
+            "link": "https://github.com/LoredCast/pongai"
+        },
+        {
+            "id": 2,
+            "title": "Stimmgerät und Tonhöhenrätsel",
+            "content": "Schnelle Fourier-Analyse als Stimmgerät, alles in einem kleinen Spiel verpackt, die richtigen Frequenzen zu treffen.",
+            "images": ["FFT-min.png"],
+            "link": "https://github.com/LoredCast/SheetQuiz"
+        },
+        {
+            "id": 3,
+            "title": "Funzel Schülerzeitung",
+            "content": "Die Schülerzeitung am WG seit 2017, jede der mehr als 500 Seiten per Hand gestaltet, dazu jede Ausgabe ein neues Cover. Es wurden insgesamt mehrere tausend Exemplare Verkauft.",
+            "images": [
+                "1min.jpg",
+                "2min.jpg",
+                "3min.jpg",
+                "5min.jpg",
+                "6min.jpg",
+                "7min.jpg"],
+            "link": "https://seafile.manuelunterriker.de/seafhttp/files/752fb6ce-da1c-467c-ae7f-201639354be1/1min.jpg"
+        },
+        {
+            "id": 4,
+            "title": "Abibuch",
+            "content": "Das Abschluss-Buch für den Abiturjahrgang 2022, voller Allusionen und Referenzen aus der Pop-Design Szene und den Medien.",
+            "images": [
+                "1min.jpg",
+                "2min.jpg",
+                "3min.jpg",
+                "5min.jpg",
+                "6min.jpg",
+                "7min.jpg"],
+            "link": "https://seafile.manuelunterriker.de/seafhttp/files/1d6e973b-8c45-4d12-bf57-ab0d9cd2dab4/2min.jpg"
+        },
+        {
+            "id": 5,
+            "title": "Flyer und Werbungen",
+            "content": "Einige Flyer, Karten und sonstige Werbeartikel, für Anfragen per Mail bin ich jederzeit offen 😄",
+            "images": [
+                "cards2-min.jpg",
+                "cards-min.jpg"],
+            "link": ""
+        }
+    ],
+
+    "en": [
+        {
+            "id": 0,
+            "title": "Electron Soundboard",
+            "content": "Nice looking Soundboard with recording and hotkey functionality built with Electron (react/typescript).",
+            "images": ["soundboard.png"],
+            "link": "https://github.com/LoredCast/soundboard"
+        },
+        {
+            "id": 1,
+            "title": "Pong AI",
+            "content": "Neuro Evolving Pong AI implemented with the python NEAT algorithm and library. In only a few generation, a fluid gameplay is possible",
+            "images": ["Pong-min.png"],
+            "link": "https://github.com/LoredCast/pongai"
+        },
+        {
+            "id": 2,
+            "title": "Command line Tuner and Pitch game",
+            "content": "CLI tool/game where you have to play the right frequency into your microphone. Detection works using Fast Fourier Transform.",
+            "images": ["FFT-min.png"],
+            "link": "https://github.com/LoredCast/SheetQuiz"
+        },
+        {
+            "id": 3,
+            "title": "Funzel Newspaper Magazine",
+            "content": "A local school magazine, since 2017, more than 500 pages total, each individually designed and thought of. Several thousand copies sold.",
+            "images": [
+                "1min.jpg",
+                "2min.jpg",
+                "3min.jpg",
+                "5min.jpg",
+                "6min.jpg",
+                "7min.jpg"
+            ],
+            "link": "https://seafile.manuelunterriker.de/seafhttp/files/752fb6ce-da1c-467c-ae7f-201639354be1/1min.jpg"
+        },
+        {
+            "id": 4,
+            "title": "Graduation Book",
+            "content": "Maybe someone will show this their children when they grow older, I certainly won't - it looks amazing from a design perspective though..",
+            "images": [
+                "1min.jpg",
+                "2min.jpg",
+                "3min.jpg",
+                "5min.jpg",
+                "6min.jpg",
+                "7min.jpg"],
+            "link": ""
+        },
+        {
+            "id": 5,
+            "title": "Flyers",
+            "content": "Several smaller print and design jobs, physically small, but equally pleasent to watch",
+            "images":[
+                "cards2-min.jpg",
+                "cards-min.jpg"],
+            "link": ""
+        }
+    ]
+}
