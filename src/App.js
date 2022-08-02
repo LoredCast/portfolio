@@ -164,16 +164,16 @@ class Projects extends React.Component {
 
     componentDidMount(){
         console.log(this.state.projects)
-        fetch("/api/getProjects")
-            .then(response => response.json())
-            .then(data => {
-                this.setState({data});
-                this.setState({ loading: false });
-                });
+        //console.log(this.state.projects)
+        // etch("/api/getProjects")
+        //    .then(response => response.json())
+        //    .then(data => {
+        //        this.setState({data});
+        //        this.setState({ loading: false });
+        //        });
     }
 
     render() {
-        if (this.state.loading) {
             return(
             <div className="projects" id="projects">
                 <div id="title"><h1><FormattedMessage id="app.projects.heading"/></h1></div>
@@ -185,19 +185,7 @@ class Projects extends React.Component {
                 </div>
             </div>
             )
-        }
-        else {
-        return(
-            <div className="projects" id="projects">
-                
-                <div id="panels">
-                    <ProjectList items={this.state.data}/>
-                </div>
-                <div id="panels">
-                    <ProjectList items={this.state.data}/>
-                </div>
-            </div>
-        );}
+        
     }
 }
 
@@ -290,8 +278,8 @@ class Project extends React.Component {
             <div className='relativeContainer'>
                 
                 {(this.props.images.length > 1) && 
-                <div class="pic" onClick={() => this.cycle()}>
-                <div class="arrow"></div></div>
+                <div className="pic" onClick={() => this.cycle()}>
+                <div className="arrow"></div></div>
                 // only render when there are more than 1 image
                 } 
 
