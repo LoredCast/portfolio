@@ -39,12 +39,10 @@
             "title": "Abibuch",
             "content": "Das Abschluss-Buch für den Abiturjahrgang 2022, voller Allusionen und Referenzen aus der Pop-Design Szene und den Medien.",
             "images": [
-                "1min.jpg",
-                "2min.jpg",
-                "3min.jpg",
-                "5min.jpg",
-                "6min.jpg",
-                "7min.jpg"],
+                "abibuch-min.jpg",
+                "abibuch2-min.jpg",
+                "abibuch3-min.jpg",
+                "abibuch4-min.jpg"],
             "link": "https://seafile.manuelunterriker.de/seafhttp/files/1d6e973b-8c45-4d12-bf57-ab0d9cd2dab4/2min.jpg"
         },
         {
@@ -53,7 +51,9 @@
             "content": "Einige Flyer, Karten und sonstige Werbeartikel, für Anfragen per Mail bin ich jederzeit offen 😄",
             "images": [
                 "cards2-min.jpg",
-                "cards-min.jpg"],
+                "cards-min.jpg",
+                "businesscard-min.jpg",
+                "businesscard2-min.jpg"],
             "link": ""
         }
     ],
@@ -99,12 +99,10 @@
             "title": "Graduation Book",
             "content": "Maybe someone will show this their children when they grow older, I certainly won't - it looks amazing from a design perspective though..",
             "images": [
-                "1min.jpg",
-                "2min.jpg",
-                "3min.jpg",
-                "5min.jpg",
-                "6min.jpg",
-                "7min.jpg"],
+                "abibuch-min.jpg",
+                "abibuch2-min.jpg",
+                "abibuch3-min.jpg",
+                "abibuch4-min.jpg"],
             "link": ""
         },
         {
@@ -113,7 +111,9 @@
             "content": "Several smaller print and design jobs, physically small, but equally pleasent to watch",
             "images":[
                 "cards2-min.jpg",
-                "cards-min.jpg"],
+                "cards-min.jpg",
+                "businesscard-min.jpg",
+                "businesscard2-min.jpg"],
             "link": ""
         }
     ]
